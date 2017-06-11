@@ -1,0 +1,33 @@
+<div class="well">
+    <h1>
+        {{prod.name}}
+    </h1>
+    <p>{{prod.description}}</p>
+    <p>Price: {{prod.price}}$</p>
+    <p>Category: {{prod.category | category}}</p>
+    <p>Available: {{prod.isAvailable ? "Yes" : "No"}}</p>
+    <button type="button" class="btn btn-primary" (click)="OnBuy(prod)">Buy</button>
+    <button type="button" class="btn btn-primary" (click)="GoBack()">Go Back</button>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Ingredients</div>
+            <div class="panel-body">
+                <ul>
+                    <li *ngFor="let ingredient of prod.ingredients">{{ingredient}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Equivalents</div>
+            <div class="panel-body">
+                <ol>
+                    <li *ngFor="let equivalent of prod.equivalents">{{equivalent}}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
